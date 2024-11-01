@@ -10,9 +10,9 @@ export class QuestionsController {
 
   @Post()
   @UseGuards(AuthGuard)
-  create(@Body() createQuestionDto: CreateQuestionDto,
+  async create(@Body() createQuestionDto: CreateQuestionDto,
     @Request() req: any) {
-    return this.questionsService.create(createQuestionDto, req.sub);
+    return await this.questionsService.create(createQuestionDto, req.sub.sub);
   }
 
   @Get()

@@ -16,7 +16,7 @@ export class AnswersController {
     @Request() req: any,
     @Param('questionId') questionId: string,
   ) {
-    return this.answersService.create(createAnswerDto, req.sub, Number(questionId));
+    return this.answersService.create(createAnswerDto, req.sub.sub, Number(questionId));
   }
 
   @Get()

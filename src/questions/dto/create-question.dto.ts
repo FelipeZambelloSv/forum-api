@@ -1,4 +1,4 @@
 export class CreateQuestionDto {
-  title: String
-  body: String
+  title: string
+  body: string
 }
